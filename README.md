@@ -2,6 +2,6 @@
 
 This is a simple example of how to use shadcn/ui with React.
 
-## Docs
+### Docs
 
 -   [shadcn/ui](https://ui.shadcn.com/docs)
