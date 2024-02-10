@@ -11,7 +11,7 @@ import {
 import { useTheme } from './theme-provider'
 
 export function ThemeToggle() {
-  const { setTheme } = useTheme()
+  const { setTheme, theme } = useTheme()
 
   return (
     <DropdownMenu>
@@ -23,13 +23,25 @@ export function ThemeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align='end'>
-        <DropdownMenuItem onClick={() => setTheme('light')}>
+        <DropdownMenuItem
+          data-theme={theme === 'light'}
+          className='data-[theme=true]:text-primary'
+          onClick={() => setTheme('light')}
+        >
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('dark')}>
+        <DropdownMenuItem
+          data-theme={theme === 'dark'}
+          className='data-[theme=true]:text-primary'
+          onClick={() => setTheme('dark')}
+        >
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('system')}>
+        <DropdownMenuItem
+          data-theme={theme === 'system'}
+          className='data-[theme=true]:text-primary'
+          onClick={() => setTheme('system')}
+        >
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
